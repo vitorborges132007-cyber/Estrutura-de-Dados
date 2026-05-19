@@ -1,0 +1,59 @@
+//main.cpp
+
+#include <iostream>
+#include "ArraySequence.h"
+using namespace std;
+
+int main() {
+    ArraySequence seq;
+    
+    cout << "a lista está vazia?";
+    
+    if(seq.isEmpty() == true){
+        cout << "Sim";
+    }
+    else{
+        cout << "Não";
+    }
+    
+    seq.add("Vitor", 1);
+    seq.add("Fabio", 2);
+    seq.add("Iracoama", 2);
+    
+    seq.print();
+    
+    seq.add("Ierania", 1);
+    seq.add("Snoopy", 5);
+    
+    cout << "Apos insercoes: ";
+    seq.print();
+    
+    cout << "Contem 'Iracoama'? " << endl;
+    if(seq.contains("Iracoama") == true){
+        cout << "Sim";
+    }
+    else{
+        cout << "Não";
+    }
+    
+    cout << "Contem 'Fabio'? " << endl;
+    if(seq.contains("Fabio") == true){
+        cout << "Sim";
+    }
+    else{
+        cout << "Não";
+    }
+    
+    
+    cout << "Elemento na posicao 3: " << seq.get(3) << endl;
+    cout << "Elemento na posicao invalida (99): '" << seq.get(99) << "'" << endl;
+    
+
+    seq.remove(3);
+    cout << "Apos remover a posicao 3 teremos a lista ";
+    seq.print();
+    
+    cout << "Tamanho final da lista é " << seq.size() << endl;
+    
+    return 0;
+}
